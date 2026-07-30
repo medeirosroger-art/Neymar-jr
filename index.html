@@ -1,18 +1,9 @@
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-</head>
-<body>
-<header>
-<h1>Meu site do Neymar JR</h1>
-<p>Vou compartilhar conhecimentos sobre Neymar JR</p>
-</header>
-<main>
-<h2>Meu primeiro post</h2>
-<p>Por: Roger Messias</p>
-<p>Boas-vindas ao meu novo blog! Aqui vou co
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Primeira Galeria - GitHub</title>
+    <title>Curiosidades do Neymar Jr - Galeria</title>
 
     <style>
         /* Reset básico para limpar margens do navegador */
@@ -24,148 +15,254 @@
         }
 
         body {
-            background-color: #f4f7f6;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             color: #333;
         }
 
         header {
             text-align: center;
             padding: 40px 20px;
-            background-color: #ffffff;
-            border-bottom: 1px solid #e0e0e0;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            border-bottom: 4px solid #f1c40f;
+            color: white;
         }
 
         header h1 {
-            color: #2c3e50;
+            font-size: 2.5em;
             margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.95;
         }
 
         /* --- CONCEITO: Flexbox e Classes --- */
         .gallery-container {
             display: flex;
-            flex-wrap: wrap; /* Faz os cards irem para a linha de baixo se não couberem */
-            justify-content: center; /* Centraliza os cards na tela */
-            gap: 30px; /* Espaçamento moderno entre os elementos flex */
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
             padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         /* Estilo do Card Individual */
         .card {
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden; /* Garante que a imagem respeite as bordas arredondadas */
-            width: 300px;
-            transition: transform 0.2s;
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            border-radius: 16px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            width: 320px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid transparent;
         }
 
         .card:hover {
-            transform: translateY(-5px); /* Efeito sutil ao passar o mouse */
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+            border-color: #f1c40f;
         }
 
         /* --- CONCEITO: Imagens e Espaçamentos --- */
         .card img {
-            width: 100%; /* A imagem ocupa toda a largura do card */
-            height: 200px;
-            object-fit: cover; /* Não distorce a imagem */
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 3px solid #f1c40f;
         }
 
         .card-content {
-            padding: 20px; /* Espaçamento interno do texto */
-        }
-      }
-
-        /* Estilo do Card Individual */
-        .card {
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden; /* Garante que a imagem respeite as bordas arredondadas */
-            width: 300px;
-            transition: transform 0.2s;
+            padding: 20px;
+            position: relative;
         }
 
-        .card:hover {
-            transform: translateY(-5px); /* Efeito sutil ao passar o mouse */
-        }
-
-        /* --- CONCEITO: Imagens e Espaçamentos --- */
-        .card img {
-            width: 100%; /* A imagem ocupa toda a largura do card */
-            height: 200px;
-            object-fit: cover; /* Não distorce a imagem */
-        }
-
-        .card-content {
-            padding: 20px; /* Espaçamento interno do texto */
+        /* Ícone do Neymar */
+        .card-content::before {
+            content: '🇧🇷';
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            font-size: 30px;
+            background: white;
+            padding: 5px 10px;
+            border-radius: 50%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         .card-content h3 {
             margin-bottom: 10px;
             color: #2c3e50;
+            font-size: 1.3em;
+        }
+
+        .card-content .destaque {
+            background: linear-gradient(135deg, #f1c40f, #f39c12);
+            color: #2c3e50;
+            padding: 8px 12px;
+            border-radius: 8px;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 0.85em;
+            margin-bottom: 12px;
         }
 
         .card-content p {
             font-size: 14px;
-            color: #666;
-            margin-bottom: 20px;
-            line-height: 1.4;
+            color: #555;
+            margin-bottom: 18px;
+            line-height: 1.6;
+        }
+
+        .card-content .curiosidade {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 4px solid #f1c40f;
+            font-style: italic;
+            color: #2c3e50;
+            margin-bottom: 18px;
+            font-size: 13px;
         }
 
         /* Estilo do Botão de Curtida */
         .like-btn {
-            background-color: #ff4757;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
             color: white;
             border: none;
-            padding: 10px 15px;
-            border-radius: 20px;
+            padding: 12px 20px;
+            border-radius: 25px;
             cursor: pointer;
             font-weight: bold;
-            transition: background 0.2s;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-size: 16px;
+            letter-spacing: 0.5px;
         }
 
         .like-btn:hover {
-            background-color: #e84118;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
         }
 
         /* Classe dinâmica que o JS pode adicionar */
         .like-btn.liked {
-            background-color: #2ed573;
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+        }
+
+        .like-btn.liked:hover {
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .card {
+                width: 100%;
+                max-width: 380px;
+            }
+            
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            .gallery-container {
+                padding: 20px 10px;
+                gap: 20px;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>📸 Meu Primeiro Feed Interativo</h1>
-        <p>Projeto criado nas aulas de Web Development e hospedado no GitHub!</p>
+        <h1>⚽ Curiosidades do Neymar Jr</h1>
+        <p>Explore a trajetória do craque brasileiro! 🇧🇷</p>
     </header>
 
     <main class="gallery-container">
 
+        <!-- Card 1: Início da Carreira -->
         <div class="card">
-            <img src="https://picsum.photos/id/1015/300/200&quot; alt="Paisagem de Montanha">
+            <img src="https://picsum.photos/id/1015/320/220" alt="Santos e início da carreira">
             <div class="card-content">
-                <h3>Aventura nas Montanhas</h3>
-                <p>Um dia incrível explorando a natureza e testando meus códigos.</p>
+                <h3>🌟 O Início no Santos</h3>
+                <span class="destaque">⚽ 2009 - 2013</span>
+                <div class="curiosidade">
+                    💡 Neymar estreou no Santos com apenas 17 anos! Em 2009, foi eleito o melhor jogador jovem do Campeonato Paulista.
+                </div>
+                <p>Revelado pelo Santos, Neymar conquistou a Libertadores em 2011 e foi artilheiro do time com 136 gols em 225 partidas.</p>
                 <button class="like-btn">❤️ <span class="like-count">0</span> Curtidas</button>
             </div>
         </div>
 
+        <!-- Card 2: Barcelona -->
         <div class="card">
-            <img src="https://picsum.photos/id/1025/300/200&quot; alt="Cachorro fofo">
+            <img src="https://picsum.photos/id/1025/320/220" alt="Barcelona e MSN">
             <div class="card-content">
-                <h3>Meu Companheiro de Code</h3>
-                <p>Garante que o código não tenha nenhum bug (ou sim!).</p>
+                <h3>🔵🔴 MSN no Barcelona</h3>
+                <span class="destaque">🏆 2013 - 2017</span>
+                <div class="curiosidade">
+                    💡 Formou com Messi e Suárez um dos melhores ataques da história! Juntos marcaram 364 gols em 3 temporadas.
+                </div>
+                <p>Neymar foi campeão da Champions League em 2015, marcando na final contra a Juventus. Pelo Barça, fez 105 gols em 186 jogos.</p>
                 <button class="like-btn">❤️ <span class="like-count">0</span> Curtidas</button>
             </div>
         </div>
 
+        <!-- Card 3: PSG e Recordes -->
         <div class="card">
-            <img src="https://picsum.photos/id/1043/300/200&quot; alt="Espaço de trabalho">
+            <img src="https://picsum.photos/id/1043/320/220" alt="PSG e recordes">
             <div class="card-content">
-                <h3>Setup Organizado</h3>
-                <p>Foco total nas aulas de HTML, CSS e JavaScript desta semana.</p>
+                <h3>🇫🇷 PSG e a Tranferência Histórica</h3>
+                <span class="destaque">💶 2017 - 2023</span>
+                <div class="curiosidade">
+                    💡 Foi a transferência mais cara da história: €222 milhões! No PSG, Neymar ultrapassou Pelé como maior artilheiro da Seleção Brasileira.
+                </div>
+                <p>Pelo PSG, conquistou 5 títulos do Campeonato Francês e marcou mais de 110 gols. Em 2023, se tornou o maior artilheiro da história da Seleção Brasileira.</p>
+                <button class="like-btn">❤️ <span class="like-count">0</span> Curtidas</button>
+            </div>
+        </div>
+
+        <!-- Card 4: Seleção Brasileira -->
+        <div class="card">
+            <img src="https://picsum.photos/id/1018/320/220" alt="Seleção Brasileira">
+            <div class="card-content">
+                <h3>🇧🇷 Lendas na Seleção</h3>
+                <span class="destaque">👑 2010 - Presente</span>
+                <div class="curiosidade">
+                    💡 Neymar é o segundo maior artilheiro da história da Seleção, atrás apenas de Pelé! Em 2023, marcou seu 78º gol, superando o Rei.
+                </div>
+                <p>Disputou 3 Copas do Mundo (2014, 2018, 2022) e foi campeão da Copa das Confederações em 2013 e da Medalha de Ouro Olímpica em 2016.</p>
+                <button class="like-btn">❤️ <span class="like-count">0</span> Curtidas</button>
+            </div>
+        </div>
+
+        <!-- Card 5: Estilo de Jogo -->
+        <div class="card">
+            <img src="https://picsum.photos/id/1044/320/220" alt="Estilo de jogo">
+            <div class="card-content">
+                <h3>✨ O Estilo Neymar</h3>
+                <span class="destaque">🎯 Drible e Criatividade</span>
+                <div class="curiosidade">
+                    💡 É conhecido por seus dribles desconcertantes, como a "Letra" e o "Elástico". Neymar é um dos jogadores com mais dribles bem-sucedidos da história!
+                </div>
+                <p>Além da habilidade, é um dos jogadores mais faltosos do mundo - já sofreu mais de 1.000 faltas em sua carreira, demonstrando sua importância para o time.</p>
+                <button class="like-btn">❤️ <span class="like-count">0</span> Curtidas</button>
+            </div>
+        </div>
+
+        <!-- Card 6: Títulos e Conquistas -->
+        <div class="card">
+            <img src="https://picsum.photos/id/1039/320/220" alt="Títulos e conquistas">
+            <div class="card-content">
+                <h3>🏆 Galeria de Troféus</h3>
+                <span class="destaque">🌟 Mais de 30 Títulos</span>
+                <div class="curiosidade">
+                    💡 Neymar já conquistou mais de 30 títulos oficiais! Incluindo 2 Ligas, 3 Copas do Rei, 1 Champions, 5 Campeonatos Franceses e 1 Olimpíada.
+                </div>
+                <p>Foi eleito o melhor jogador da América do Sul em 2011 e 2012, e entrou para o time do ano da UEFA em 2015.</p>
                 <button class="like-btn">❤️ <span class="like-count">0</span> Curtidas</button>
             </div>
         </div>
@@ -173,14 +270,15 @@
     </main>
 
     <script>
-        // 1. Seleciona TODOS os botões de curtida da página (Eventos em múltiplos elementos)
+        // 1. Seleciona TODOS os botões de curtida da página
         const botoesLike = document.querySelectorAll('.like-btn');
 
         // 2. Passa por cada botão usando o forEach
         botoesLike.forEach(function(botao) {
            
             // Adiciona o evento de clique para CADA um dos botões
-            botao.addEventListener('click', function() {
+            botao.addEventListener('click', function(e) {
+                e.preventDefault();
                
                 // Encontra o elemento <span> de número de curtidas específico DESTE card
                 const spanContador = botao.querySelector('.like-count');
@@ -189,130 +287,96 @@
                 let curtidasAtuais = parseInt(spanContador.textContent);
                
                 // --- CONCEITO: Lógica de curtidas ---
-                // Verifica se o usuário já curtiu (checando se a classe 'liked' existe no botão)
                 if (botao.classList.contains('liked')) {
-                    // Se já tinha curtido: remove a classe e diminui 1 do contador
                     botao.classList.remove('liked');
                     curtidasAtuais--;
+                    // Feedback de desafeto
+                    botao.style.transform = 'scale(0.9)';
                 } else {
-                    // Se não tinha curtido: adiciona a classe e aumenta 1 no contador
                     botao.classList.add('liked');
                     curtidasAtuais++;
+                    // Efeito especial ao curtir
+                    botao.style.transform = 'scale(1.1)';
+                    
+                    // Criar coração flutuante (opcional)
+                    criarCoracaoFlutuante(botao);
                 }
                
-                // Atualiza o texto do HTML com o novo valor (Contador de likes)
+                // Atualiza o texto do HTML com o novo valor
                 spanContador.textContent = curtidasAtuais;
+                
+                // Reset da animação
+                setTimeout(() => {
+                    botao.style.transform = 'scale(1)';
+                }, 200);
             });
            
         });
-    </script>
-</body>
-</html>
-        .card-content h3 {
-            margin-bottom: 10px;
-            color: #2c3e50;
+
+        // Função para criar efeito visual de coração
+        function criarCoracaoFlutuante(botao) {
+            const coracao = document.createElement('span');
+            coracao.textContent = '⚽';
+            coracao.style.cssText = `
+                position: fixed;
+                font-size: 40px;
+                pointer-events: none;
+                animation: flutuar 1.2s ease-out forwards;
+                left: ${event.clientX || window.innerWidth/2}px;
+                top: ${event.clientY || window.innerHeight/2}px;
+                z-index: 1000;
+            `;
+            document.body.appendChild(coracao);
+            
+            setTimeout(() => coracao.remove(), 1200);
         }
 
-        .card-content p {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 20px;
-            line-height: 1.4;
-        }
-
-        /* Estilo do Botão de Curtida */
-        .like-btn {
-            background-color: #ff4757;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background 0.2s;
-        }
-
-        .like-btn:hover {
-            background-color: #e84118;
-        }
-
-        /* Classe dinâmica que o JS pode adicionar */
-        .like-btn.liked {
-            background-color: #2ed573;
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <h1>📸 Meu Primeiro Feed Interativo</h1>
-        <p>Projeto criado nas aulas de Web Development e hospedado no GitHub!</p>
-    </header>
-
-    <main class="gallery-container">
-
-        <div class="card">
-            <img src="https://picsum.photos/id/1015/300/200&quot; alt="Paisagem de Montanha">
-            <div class="card-content">
-                <h3>Aventura nas Montanhas</h3>
-                <p>Um dia incrível explorando a natureza e testando meus códigos.</p>
-                <button class="like-btn">❤️ <span class="like-count">0</span> Curtidas</button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="https://picsum.photos/id/1025/300/200&quot; alt="Cachorro fofo">
-            <div class="card-content">
-                <h3>Meu Companheiro de Code</h3>
-                <p>Garante que o código não tenha nenhum bug (ou sim!).</p>
-                <button class="like-btn">❤️ <span class="like-count">0</span> Curtidas</button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="https://picsum.photos/id/1043/300/200&quot; alt="Espaço de trabalho">
-            <div class="card-content">
-                <h3>Setup Organizado</h3>
-                <p>Foco total nas aulas de HTML, CSS e JavaScript desta semana.</p>
-                <button class="like-btn">❤️ <span class="like-count">0</span> Curtidas</button>
-            </div>
-        </div>
-
-    </main>
-
-    <script>
-        // 1. Seleciona TODOS os botões de curtida da página (Eventos em múltiplos elementos)
-        const botoesLike = document.querySelectorAll('.like-btn');
-
-        // 2. Passa por cada botão usando o forEach
-        botoesLike.forEach(function(botao) {
-           
-            // Adiciona o evento de clique para CADA um dos botões
-            botao.addEventListener('click', function() {
-               
-                // Encontra o elemento <span> de número de curtidas específico DESTE card
-                const spanContador = botao.querySelector('.like-count');
-               
-                // Pega o número atual que está no texto e transforma em número inteiro
-                let curtidasAtuais = parseInt(spanContador.textContent);
-               
-                // --- CONCEITO: Lógica de curtidas ---
-                // Verifica se o usuário já curtiu (checando se a classe 'liked' existe no botão)
-                if (botao.classList.contains('liked')) {
-                    // Se já tinha curtido: remove a classe e diminui 1 do contador
-                    botao.classList.remove('liked');
-                    curtidasAtuais--;
-                } else {
-                    // Se não tinha curtido: adiciona a classe e aumenta 1 no contador
-                    botao.classList.add('liked');
-                    curtidasAtuais++;
+        // Adicionar animação CSS para o coração flutuante
+        const styleAnimacao = document.createElement('style');
+        styleAnimacao.textContent = `
+            @keyframes flutuar {
+                0% { 
+                    opacity: 1; 
+                    transform: translateY(0) scale(1) rotate(0deg);
                 }
-               
-                // Atualiza o texto do HTML com o novo valor (Contador de likes)
-                spanContador.textContent = curtidasAtuais;
-            });
-           
-        });
+                50% {
+                    opacity: 0.8;
+                    transform: translateY(-50px) scale(1.3) rotate(10deg);
+                }
+                100% { 
+                    opacity: 0; 
+                    transform: translateY(-120px) scale(0.5) rotate(-10deg);
+                }
+            }
+
+            .like-btn {
+                position: relative;
+                overflow: hidden;
+            }
+
+            .like-btn::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 0;
+                height: 0;
+                background: rgba(255,255,255,0.3);
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+                transition: width 0.6s, height 0.6s;
+            }
+
+            .like-btn:active::after {
+                width: 300px;
+                height: 300px;
+            }
+        `;
+        document.head.appendChild(styleAnimacao);
+
+        // Mostrar mensagem de boas-vindas
+        console.log('⚽ Bem-vindo à Galeria do Neymar Jr!');
+        console.log('🇧🇷 Curta os momentos mais incríveis do craque brasileiro!');
     </script>
 </body>
 </html>
